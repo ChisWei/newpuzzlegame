@@ -25,25 +25,25 @@ glow_enabled = true
 
 [node name="Map" type="Node3D" parent="."]
 
-[node name="south_wall" type="CSGBox3D" parent="Map"]
+[node name="wallSouth" type="CSGBox3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -29.5653)
 material_override = ExtResource("3_irgfk")
 use_collision = true
 size = Vector3(52.4636, 5.83948, 1)
 
-[node name="north_wall" type="CSGBox3D" parent="Map"]
+[node name="wallNorth" type="CSGBox3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.3824)
 use_collision = true
 size = Vector3(52.4636, 5.83948, 1)
 material = ExtResource("3_irgfk")
 
-[node name="east_wall" type="CSGBox3D" parent="Map"]
+[node name="wallEast" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26, 0, 0.382374)
 material_override = ExtResource("3_irgfk")
 use_collision = true
 size = Vector3(60, 5.83948, 1)
 
-[node name="west_wall" type="CSGBox3D" parent="Map"]
+[node name="wallWest" type="CSGBox3D" parent="Map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26, 0, 0.382374)
 material_override = ExtResource("3_irgfk")
 use_collision = true
@@ -61,10 +61,21 @@ environment = SubResource("Environment_g2h84")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="room1" type="CSGBox3D" parent="Map"]
-transform = Transform3D(2.8714, 0, 0, 0, 5.57056, 0, 0, 0, 3.34769, 11.4971, 3.79502, -17.6536)
-use_collision = true
-size = Vector3(5.48567, 1.39349, 3.7574)
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58213, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Map/CSGCombiner3D"]
+size = Vector3(8, 3, 8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Map/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44841, 0)
+operation = 2
+size = Vector3(7, 2.5, 7)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Map/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7406, -4.16232)
+operation = 2
+size = Vector3(3, 3, 3)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_1d73w")
