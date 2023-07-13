@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=13 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1d73w"]
+[ext_resource type="Script" path="res://Scenes/World.gd" id="1_ejmc5"]
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
+[ext_resource type="PackedScene" uid="uid://bcq65ktyl64x3" path="res://LladderParts.tscn" id="4_7lbo5"]
+[ext_resource type="PackedScene" uid="uid://cbj2185efqost" path="res://door.tscn" id="5_dpjfg"]
+[ext_resource type="PackedScene" uid="uid://wnhotby4cnw8" path="res://room_parts.tscn" id="6_pcq2f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,6 +26,7 @@ glow_enabled = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_ejmc5")
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -50,6 +55,7 @@ use_collision = true
 size = Vector3(60, 5.83948, 1)
 
 [node name="floor" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.288201, 0)
 material_override = ExtResource("1_o5nrg")
 use_collision = true
 size = Vector3(52.2363, 0.002, 59.575)
@@ -61,27 +67,12 @@ environment = SubResource("Environment_g2h84")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.58213, 0, 0)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Map/CSGCombiner3D"]
-size = Vector3(8, 3, 8)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Map/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44841, 0)
-operation = 2
-size = Vector3(7, 2.5, 7)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Map/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7406, -4.16232)
-operation = 2
-size = Vector3(3, 3, 3)
-
 [node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67449, 0, -4.28126)
 script = ExtResource("1_1d73w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-0.447244, 0.0665482, -0.891933, 0, 0.997228, 0.0744044, 0.894412, 0.0332769, -0.446004, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_xc2g5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
@@ -92,3 +83,14 @@ shape = SubResource("CapsuleShape3D_wydro")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Ladder" parent="." instance=ExtResource("4_7lbo5")]
+transform = Transform3D(5, 0, 0, 0, 0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, -0.290895, -8.53488)
+
+[node name="door" parent="." instance=ExtResource("5_dpjfg")]
+transform = Transform3D(-2.98124, -0.00406635, -0.334952, 0.00037315, 2.99974, -0.0397382, 0.334977, -0.0395314, -2.98097, 2.88678, -0.21323, 4.49747)
+
+[node name="RoomParts" parent="." instance=ExtResource("6_pcq2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88946, -0.287202, 22.7257)
