@@ -42,7 +42,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_toyp8"]
-size = Vector3(1.14547, 0.845461, 1.23838)
+size = Vector3(0.896969, 0.729387, 1.86165)
 
 [node name="door" type="Node3D"]
 script = ExtResource("1_b0hmh")
@@ -51,6 +51,7 @@ script = ExtResource("1_b0hmh")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Hingel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.494804, 0.487191, 0)
+use_collision = true
 mesh = SubResource("BoxMesh_o3kk6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -62,7 +63,8 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.65277)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.470556, 0.473166, -0.811076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.453801, 0.440951, -1.65716)
 shape = SubResource("BoxShape3D_toyp8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

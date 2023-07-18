@@ -1,28 +1,33 @@
-[gd_scene format=3 uid="uid://bcq65ktyl64x3"]
+[gd_scene load_steps=2 format=3 uid="uid://bcq65ktyl64x3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_smyib"]
+size = Vector3(2.82428, 0.0716752, 4.17636)
 
 [node name="Ladder" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0622522, 0)
-use_collision = true
 size = Vector3(2.69972, 0.186757, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.254225, -0.41537)
-use_collision = true
 size = Vector3(2.69972, 0.186757, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.446141, -0.840405)
-use_collision = true
 size = Vector3(2.69972, 0.186757, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.632898, -1.28655)
-use_collision = true
 size = Vector3(2.69972, 0.186757, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.819654, -1.81569)
-use_collision = true
 size = Vector3(2.69972, 0.186757, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036262, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.93495, -0.354781, 0, 0.354781, 0.93495, 0.0499433, 0.416666, -0.0446866)
+shape = SubResource("BoxShape3D_smyib")

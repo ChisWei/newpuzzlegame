@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafrmcilt7xqn"
-path="res://.godot/imported/tree1_0.png-48506c3b371eee872e7f529c9c0ef0ae.ctex"
+path="res://.godot/imported/tree1_0.png-3abf82bfe37c961085cb529bffde6081.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,8 +11,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res:///tree1_0.png"
-dest_files=["res://.godot/imported/tree1_0.png-48506c3b371eee872e7f529c9c0ef0ae.ctex"]
+source_file="res://tree1_0.png"
+dest_files=["res://.godot/imported/tree1_0.png-3abf82bfe37c961085cb529bffde6081.ctex"]
 
 [params]
 
