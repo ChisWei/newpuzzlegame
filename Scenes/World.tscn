@@ -5,8 +5,8 @@
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
 [ext_resource type="PackedScene" uid="uid://bcq65ktyl64x3" path="res://LladderParts.tscn" id="4_7lbo5"]
-[ext_resource type="PackedScene" uid="uid://jkflir0kf4g7" path="res://knife.glb" id="5_8dquq"]
 [ext_resource type="PackedScene" uid="uid://cbj2185efqost" path="res://door.tscn" id="5_dpjfg"]
+[ext_resource type="PackedScene" uid="uid://dydvo8v33ra54" path="res://glbs/knife_animate.glb" id="5_ljmg2"]
 [ext_resource type="PackedScene" uid="uid://wnhotby4cnw8" path="res://room_parts.tscn" id="6_pcq2f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
@@ -83,10 +83,10 @@ shape = SubResource("CapsuleShape3D_wydro")
 [node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
+[node name="knife_animate" parent="Player/Head" instance=ExtResource("5_ljmg2")]
+transform = Transform3D(0.0465352, 0.0241987, -0.0851405, -0.0402082, 0.091472, 0.00402163, 0.0788529, 0.032362, 0.0522965, 0.405746, -0.914825, -1.32837)
 
-[node name="knife" parent="Player/Head" instance=ExtResource("5_8dquq")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00499535, -1.19917, -2.10924)
+[node name="Camera3D" type="Camera3D" parent="Player/Head"]
 
 [node name="Node" type="Node" parent="."]
 
