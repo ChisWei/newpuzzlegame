@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
 [ext_resource type="PackedScene" uid="uid://bcq65ktyl64x3" path="res://LladderParts.tscn" id="4_7lbo5"]
 [ext_resource type="PackedScene" uid="uid://cbj2185efqost" path="res://door.tscn" id="5_dpjfg"]
-[ext_resource type="PackedScene" uid="uid://dydvo8v33ra54" path="res://glbs/knife_animate.glb" id="5_ljmg2"]
+[ext_resource type="PackedScene" uid="uid://cuj020je2bfno" path="res://from_blender/knife_123.tscn" id="5_hmhb0"]
 [ext_resource type="PackedScene" uid="uid://wnhotby4cnw8" path="res://room_parts.tscn" id="6_pcq2f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
@@ -83,10 +83,11 @@ shape = SubResource("CapsuleShape3D_wydro")
 [node name="Head" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
-[node name="knife_animate" parent="Player/Head" instance=ExtResource("5_ljmg2")]
-transform = Transform3D(0.0465352, 0.0241987, -0.0851405, -0.0402082, 0.091472, 0.00402163, 0.0788529, 0.032362, 0.0522965, 0.405746, -0.914825, -1.32837)
+[node name="knife123" parent="Player/Head" instance=ExtResource("5_hmhb0")]
+transform = Transform3D(-0.00629298, 0, -0.0998018, 0, 0.1, 0, 0.0998018, 0, -0.00629298, 0.907698, -0.750231, -1.05339)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
+current = true
 
 [node name="Node" type="Node" parent="."]
 
