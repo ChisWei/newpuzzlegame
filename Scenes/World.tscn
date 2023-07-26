@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scenes/World.gd" id="1_ejmc5"]
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
-[ext_resource type="PackedScene" uid="uid://bcq65ktyl64x3" path="res://LladderParts.tscn" id="4_7lbo5"]
-[ext_resource type="PackedScene" uid="uid://cbj2185efqost" path="res://door.tscn" id="5_dpjfg"]
+[ext_resource type="PackedScene" uid="uid://cbj2185efqost" path="res://door/door.tscn" id="5_dpjfg"]
 [ext_resource type="PackedScene" uid="uid://cuj020je2bfno" path="res://from_blender/knife_123.tscn" id="5_hmhb0"]
-[ext_resource type="PackedScene" uid="uid://wnhotby4cnw8" path="res://room_parts.tscn" id="6_pcq2f"]
+[ext_resource type="PackedScene" uid="uid://wnhotby4cnw8" path="res://room/room_parts.tscn" id="6_pcq2f"]
+[ext_resource type="PackedScene" uid="uid://bcq65ktyl64x3" path="res://stairs/stairs.tscn" id="8_2fomi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -94,8 +94,8 @@ current = true
 [node name="door" parent="." instance=ExtResource("5_dpjfg")]
 transform = Transform3D(-2.98124, -0.00406635, -0.334952, 0.00037315, 2.99974, -0.0397382, 0.334977, -0.0395314, -2.98097, 2.88678, -0.21323, 4.49747)
 
-[node name="Ladder" parent="." instance=ExtResource("4_7lbo5")]
-transform = Transform3D(5, 0, 0, 0, 0.999848, -0.0174524, 0, 0.0174524, 0.999848, 0, -0.290895, -8.53488)
-
 [node name="RoomParts" parent="." instance=ExtResource("6_pcq2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88946, -0.287202, 22.7257)
+
+[node name="Stairs" parent="." instance=ExtResource("8_2fomi")]
+transform = Transform3D(4.78239, 0, 0.291804, 0, 1, 0, -1.45902, 0, 0.956478, 8.09451, -0.287202, -13.0584)
